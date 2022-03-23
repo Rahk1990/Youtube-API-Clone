@@ -5,16 +5,15 @@ const SearchBar = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(searchVideo)
-        props.fetchVideos(searchVideo);
+        console.log('')
+        props.getSearchResults(searchVideo);
 
     }
     
-
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input type='text' placeholder='Search...' value={searchVideo} onChange={(event) => setSearchVideo(event.target.value)} ></input>
+                <input type='text' placeholder='Search...' value={searchVideo} onChange={(event) => setSearchVideo(event.target.value)} />
                 <button onClick={handleSubmit} type='submit'>Search</button>
             </form>
         </div>
