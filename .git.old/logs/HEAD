@@ -1,0 +1,8 @@
+0000000000000000000000000000000000000000 8ba243cfcbd57204dd2af586676fb0178f39f9ec rahk1990 <rahkem.ellis@gmail.com> 1647908830 -0400	clone: from https://github.com/Quentin-Hicks/YouTube-Backend
+8ba243cfcbd57204dd2af586676fb0178f39f9ec 798277aff579f09d6bb72f1f8e776665451e0ce1 rahk1990 <rahkem.ellis@gmail.com> 1647958409 -0400	commit: frontend inittial setup for youtube clone
+798277aff579f09d6bb72f1f8e776665451e0ce1 c8c6511f8071c0b718840dcfd97067d88672312e rahk1990 <rahkem.ellis@gmail.com> 1647964665 -0400	commit: created addComment component and user forms
+c8c6511f8071c0b718840dcfd97067d88672312e 3f7ee1541e6a913f43b045b40dfa656de576f057 rahk1990 <rahkem.ellis@gmail.com> 1647972516 -0400	commit: modified App for comment and search components
+3f7ee1541e6a913f43b045b40dfa656de576f057 8b2c9967b26ed3ebe253e0576dd6c48f0919418f rahk1990 <rahkem.ellis@gmail.com> 1647974011 -0400	pull --tags origin main: Fast-forward
+8b2c9967b26ed3ebe253e0576dd6c48f0919418f c8c6511f8071c0b718840dcfd97067d88672312e rahk1990 <rahkem.ellis@gmail.com> 1647975749 -0400	reset: moving to HEAD~2
+c8c6511f8071c0b718840dcfd97067d88672312e 8b2c9967b26ed3ebe253e0576dd6c48f0919418f rahk1990 <rahkem.ellis@gmail.com> 1647978313 -0400	pull --tags origin main: Fast-forward
+8b2c9967b26ed3ebe253e0576dd6c48f0919418f 3f7ee1541e6a913f43b045b40dfa656de576f057 rahk1990 <rahkem.ellis@gmail.com> 1647978336 -0400	reset: moving to HEAD~1
