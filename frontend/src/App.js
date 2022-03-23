@@ -23,55 +23,31 @@ import AddComment from "./pages/AddComment/AddComment";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 
 
-
-// function App() {
-
-//   const [videos, setVideos] = useState([])
-
-//   useEffect(() => {
-//     getAllVideos()
-//   }, [])
-
-//   async function getAllVideos(){
-//     console.log()
-//   }
 function App(props) {
 
-  const [videos, setVideos] = useState([]); // let videos = []
-  const [filteredVideo, filterVideos] = useState(' '); //let filteredVideo = 'stand up comedy'
+  const [searchResults, setSearchResults] = useState([]); // let videos = []
+  // const [filteredVideo, filterVideos] = useState(' '); //let filteredVideo = 'stand up comedy'
 
 
   useEffect(() => {
-    fetchVideos()
+    getSearchResults()
   }, [])
 
-  async function fetchVideos(searchData= "dog"){
-    let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${searchData}&key=AIzaSyDwR9sq_J_2coyq7I-XMRCCi6sg_PwPhF0`);
-    setVideos(response.data)
+  async function getSearchResults(searchTerm='cats'){
+    let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&key=AIzaSyDwR9sq_J_2coyq7I-XMRCCi6sg_PwPhF0`)
     console.log(response.data)
+    console.log('its workin')
+    setSearchResults(response.data)
+    // setVideos(response.data.results)
   }
 
-  // useEffect(() => {
-  //   console.log('use effect')
-  //   let mounted = true
-  //   if(mounted){
-  //     fetchVideos()
-  //   }
-  //   return () => mounted = false
-  // }, [])
-
-  // function mapVideos(){
-  //   return videos.map(video =>
-  //     console.log('map')
-  //     )
-  // }
 
   return (
     <div>
       
       <Navbar />
     
-      <SearchBar fetchVideos={fetchVideos} />
+      <SearchBar getSearchResults={getSearchResults} />
       <Routes>
         <Route
           path="/"
