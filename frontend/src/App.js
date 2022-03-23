@@ -25,42 +25,25 @@ import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 
 function App(props) {
 
-  const [searchResults, setSearchResults] = useState(['']); // let videos = []
+  const [searchResults, setSearchResults] = useState([]); // let videos = []
   // const [filteredVideo, filterVideos] = useState(' '); //let filteredVideo = 'stand up comedy'
-
+  const [currentVideoId, setCurrentVideoId] = useState([]);
+  const [currentVideoTitle, setCurrentVideoTitle] = useState([]);
+  const [currentVideoDescription, setCurrentVideoDescription] = useState([]);
 
   useEffect(() => {
     getSearchResults()
   }, [])
 
-  async function getSearchResults(searchTerm){
+  async function getSearchResults(searchTerm="bob ross"){
     let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${searchTerm}&key=AIzaSyDwR9sq_J_2coyq7I-XMRCCi6sg_PwPhF0&part=snippet`)
-    console.log(response.data)
+    console.log(response.data.items)
     console.log(`${searchTerm}`)
-    setSearchResults(response.data)
+    setSearchResults(response.data.items)
     // setVideos(response.data.results)
   }
 
-  // function mapVideo(){
-  //   console.log("mapping");
-  //   debugger;
-  //   return searchResults.map(videos =>
-  //   <SearchPage
-  //   key={id.videoId}
-  //   id ={id}
-  //    /> 
-  //    )
-  // }
-
-  // useEffect(()=>{
-  //   console.log("use effect");
-  //   let mounted = true;
-  //   if(mounted){
-  //     getSearchResults();
-  //   }
-  //   return () => mounted = false;
-
-  // }, [])
+  
 
 
   return (
@@ -74,7 +57,13 @@ function App(props) {
           path="/"
           element={
             <PrivateRoute>
-              <HomePage />
+              <VideoPlayer/>
+              <HomePage 
+              searchResults={searchResults}
+              setCurrentVideoDescription={setCurrentVideoDescription}
+              setCurrentVideoId={setCurrentVideoId}
+              setCurrentVideoTitle={setCurrentVideoTitle}
+              />
             </PrivateRoute>
           }
         />

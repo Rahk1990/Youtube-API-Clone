@@ -4,9 +4,15 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 
 const SearchResults = (props) => {
     return (
-        <tr>
-            <td>props.</td>
-        </tr>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            {props.mapVideo()}
+        </table>
     );
 
 }
