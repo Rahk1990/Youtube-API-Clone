@@ -41,7 +41,26 @@ function App(props) {
     // setVideos(response.data.results)
   }
 
+  function mapVideo(){
+    console.log("mapping");
+    debugger;
+    return searchResults.map(videos =>
+    <SearchPage
+    key={id.videoId}
+    id ={id}
+     /> 
+     )
+  }
 
+  useEffect(()=>{
+    console.log("use effect");
+    let mounted = true;
+    if(mounted){
+      getSearchResults();
+    }
+    return () => mounted = false;
+
+  }, [])
   return (
     <div>
       
