@@ -6,7 +6,7 @@ const VideoPlayer = (props) => {
    
     // function playVideo()
     // const videoId = "smqhSl0u_sI";
-    const videoId = props.currentVideoId()
+    const videoId = props.currentVideoId;
     console.log(videoId)
     const videoTitle = props.currentVideoTitle;
     console.log(videoTitle)
