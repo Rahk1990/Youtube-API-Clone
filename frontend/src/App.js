@@ -57,7 +57,11 @@ function App(props) {
           path="/"
           element={
             <PrivateRoute>
-              <VideoPlayer/>
+              <VideoPlayer 
+              currentVideoDescription={currentVideoDescription}
+              currentVideoId={currentVideoId}
+              currentVideoTitle={currentVideoTitle}
+               />
               <HomePage 
               searchResults={searchResults}
               setCurrentVideoDescription={setCurrentVideoDescription}
