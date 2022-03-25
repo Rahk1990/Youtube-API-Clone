@@ -21,6 +21,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 // import for adding comment 
 import AddComment from "./pages/AddComment/AddComment";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
+import CommentList from "./components/CommentList/CommentList";
 
 
 function App(props) {
@@ -30,6 +31,15 @@ function App(props) {
   const [currentVideoId, setCurrentVideoId] = useState([]);
   const [currentVideoTitle, setCurrentVideoTitle] = useState([]);
   const [currentVideoDescription, setCurrentVideoDescription] = useState([]);
+  //  For catching comments from the comment list.
+  // const [commentList, setCommentList] = useState([]);
+  // const [commentUser, setCommentUser] = useState([]);
+  // const [commentText, setCommentText] = useState([]);
+  // const [commentVideoId, setCommentVideoId] = useState([]);
+  // const [commentLikes, setCommentLikes] = useState([]);
+  // const [commentDislikes, setCommentDislikes] = useState([]);
+
+  // const [comments, setComments] = useState([{user: '', text: '', videoId: '', likes: '', dislikes: '' }])
 
   useEffect(() => {
     getSearchResults()
@@ -52,16 +62,19 @@ function App(props) {
       <Navbar />
     
       <SearchBar getSearchResults={getSearchResults} />
+      <div className="mainpage">
+        
       <Routes>
         <Route
           path="/"
           element={
             <PrivateRoute>
-              <VideoPlayer 
+              <VideoPlayer className="form"
               currentVideoDescription={currentVideoDescription}
               currentVideoId={currentVideoId}
               currentVideoTitle={currentVideoTitle}
-               />
+              />
+            
               <HomePage 
               searchResults={searchResults}
               setCurrentVideoDescription={setCurrentVideoDescription}
@@ -70,12 +83,21 @@ function App(props) {
               />
             </PrivateRoute>
           }
-        />
+          />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         
-        <Route path="/addcomment" element={<PrivateRoute><AddComment /></PrivateRoute>} />
+        <Route path="/addcomment" element={<PrivateRoute><AddComment
+        // setCommentList={setCommentList}
+        // setCommentUser={setCommentUser} 
+        // setCommentVideoId={setCommentVideoId}  
+        // setCommentText={setCommentText} 
+        // setCommentLikes={setCommentLikes} 
+        // setCommentDislikes={setCommentDislikes} 
+        />
+        </PrivateRoute>} />
       </Routes>
+        </div>
       <Footer />
     </div>
   );

@@ -25,12 +25,16 @@ event.preventDefault();
       <h1>Home Page for {user.username}!</h1>
       <Link to= "/addcomment">Post Comment</Link>
       {props.searchResults.map((video, index) => (
-          <div key={index}>
+          <div className="container" key={index}>
             <p>{video.snippet.title}</p>
-            <input type="image" src={video.snippet.thumbnails.medium.url}
-            onClick={(event) => handleClick(event, video.id.videoId, video.snippet.title, video.snippet.description )}
-            />
-            <p>{video.snippet.description}</p>
+           <div>
+
+              <input className="form" type="image" src={video.snippet.thumbnails.medium.url}
+              onClick={(event) => handleClick(event, video.id.videoId, video.snippet.title, video.snippet.description )}
+              />
+
+            </div> 
+            <p className="container">{video.snippet.description}</p>
           </div>
         ))}
     </div>

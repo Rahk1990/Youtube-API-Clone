@@ -14,8 +14,21 @@ let initialValues = {
     dislikes:"",
 };
 
+// const commentList = (props ,user, video_id, text, likes, dislikes) =>{
+//     // user = props.setCommentUser(user);
+
+//     props.setCommentUser(user);
+//     props.setCommentVideoId(video_id);
+//     props.setCommentText(text);
+//     props.setCommentLikes(likes);
+//     props.setCommentDislikes(dislikes);
+    
+// }
+
 // function for adding a comment
 const AddComment = () => {
+    
+
     const [user, token] = useAuth()
     const navigate = useNavigate()
     const [formData, handleInputChange, handleSubmit] = useCustomForm(initialValues, postNewComment)

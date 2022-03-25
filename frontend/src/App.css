@@ -39,6 +39,14 @@ button:hover {
   overflow: auto;
   text-align: center;
 }
+.mainpage {
+  margin: auto;
+  max-width: auto;
+  padding: 2px;
+  text-align: center;
+  background-color: blueviolet;
+  text-align: center;
+}
 
 .form {
   align-items: center;
@@ -46,6 +54,7 @@ button:hover {
   flex-direction: column;
   justify-content: flex-end;
   gap: 1rem;
+  text-align: left;
 }
 
 .form input {
